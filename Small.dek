@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deck xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NetDeckID>0</NetDeckID>
+  <PreconstructedDeckID>0</PreconstructedDeckID>
+  <Cards CatID="63766" Quantity="1" Sideboard="false" Name="Bontu the Glorified" />
+  <Cards CatID="55731" Quantity="1" Sideboard="false" Name="Hero's Downfall" />
+  <Cards CatID="63720" Quantity="1" Sideboard="false" Name="Kefnet the Mindful" />
+  <Cards CatID="60502" Quantity="1" Sideboard="false" Name="Aegis Angel" />
+  <Cards CatID="64026" Quantity="1" Sideboard="false" Name="Dusk/Dawn" />
+  <Cards CatID="64092" Quantity="1" Sideboard="false" Name="Failure/Comply" />
+  <Cards CatID="62071" Quantity="1" Sideboard="false" Name="Fleetwheel Cruiser" />
+</Deck>
