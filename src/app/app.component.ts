@@ -1,4 +1,4 @@
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component, Pipe, PipeTransform, Input } from '@angular/core';
 declare var $: any;
 
 export class Card {
@@ -50,7 +50,10 @@ export class MyFilterPipe implements PipeTransform {
     }
 }
 
-class CardSet {
+///
+/// Card set model class.
+///
+export class CardSet {
     public abbr: string;
     public name: string;
     public cards: Array<any>;
@@ -80,15 +83,39 @@ class CardSet {
     }
 }
 
+///
+/// Card set render class.
+///
+@Component({
+    selector: 'card-set',
+    template: `
+    <li>
+        {{ set.name }} ({{ set.abbr }}) - {{ set.is_loaded ? 'Loaded' : 'Not Loaded' }} <span (click)="Toggle()">Open</span>
+        <div [ngClass]="{'hide': isShow == false}">
+            {{ set.name }}<br/>
+            {{ set.abbr }}<br/>   
+        </div>
+    </li>`
+})
+export class CardSetRender {
+    @Input() set: CardSet;
+    public isShow: boolean = false;
+
+    Toggle() {
+        this.isShow = !this.isShow;
+    }
+}
+
+///
+/// Main app component.
+///
 @Component({
     selector: 'my-app',
     template: 
     `
         <button (click)="LoadSetData()">Load Set</button>
         <ul>
-            <li *ngFor="let set of set_data">
-                {{ set.name }} ({{ set.abbr }}) - {{ set.is_loaded ? 'Loaded' : 'Not Loaded' }}
-            </li>
+            <card-set *ngFor="let set of set_data" [set]="set" ></card-set>
         </ul>
         <input #MtgoFile type="file" (change)="ParseFile(MtgoFile)" />
         <p>Cards:</p>
