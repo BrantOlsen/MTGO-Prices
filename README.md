@@ -10,3 +10,6 @@ MTGO Pricing
 
 **Known Issues**
 - MTGO does not export set information for cards, so the first set that has the card name in it will be used. Edit the AppComponent.sets list to ensure you find the right sets.
+
+
+https://embed.plnkr.co/?show=preview
