@@ -111,20 +111,7 @@ export class CardSetRender {
 ///
 @Component({
     selector: 'my-app',
-    template: 
-    `
-        <button (click)="LoadSetData()">Load Set</button>
-        <ul>
-            <card-set *ngFor="let set of set_data" [set]="set" ></card-set>
-        </ul>
-        <input #MtgoFile type="file" (change)="ParseFile(MtgoFile)" />
-        <p>Cards:</p>
-        <ul>
-            <li *ngFor="let card of cards | priceFilter: '0.02' | orderby : 'price'">
-                {{ card.name }} - {{ card.price }} - {{ card.GetUrl() }}
-            </li>
-        </ul>
-    `
+    templateUrl: './app.component.html'
 })
 export class AppComponent {
     cards = new Array<Card>();
